@@ -1,0 +1,14 @@
+C:\Users\AdemS\source\repos\Tangentengleichung\Tangentengleichung\obj\Debug\Tangentengleichung.csprojAssemblyReference.cache
+C:\Users\AdemS\source\repos\Tangentengleichung\Tangentengleichung\obj\Debug\Tangentengleichung.csproj.CoreCompileInputs.cache
+C:\Users\AdemS\source\repos\Tangentengleichung\Tangentengleichung\bin\Debug\Tangentengleichung.exe.config
+C:\Users\AdemS\source\repos\Tangentengleichung\Tangentengleichung\bin\Debug\Tangentengleichung.exe
+C:\Users\AdemS\source\repos\Tangentengleichung\Tangentengleichung\bin\Debug\Tangentengleichung.pdb
+C:\Users\AdemS\source\repos\Tangentengleichung\Tangentengleichung\obj\Debug\Tangentengleichung.exe
+C:\Users\AdemS\source\repos\Tangentengleichung\Tangentengleichung\obj\Debug\Tangentengleichung.pdb
+C:\Users\AdemS\source\repos\Tangentengleichung - DoubleSupport\Tangentengleichung\bin\Debug\Tangentengleichung.exe.config
+C:\Users\AdemS\source\repos\Tangentengleichung - DoubleSupport\Tangentengleichung\bin\Debug\Tangentengleichung.exe
+C:\Users\AdemS\source\repos\Tangentengleichung - DoubleSupport\Tangentengleichung\bin\Debug\Tangentengleichung.pdb
+C:\Users\AdemS\source\repos\Tangentengleichung - DoubleSupport\Tangentengleichung\obj\Debug\Tangentengleichung.csprojAssemblyReference.cache
+C:\Users\AdemS\source\repos\Tangentengleichung - DoubleSupport\Tangentengleichung\obj\Debug\Tangentengleichung.csproj.CoreCompileInputs.cache
+C:\Users\AdemS\source\repos\Tangentengleichung - DoubleSupport\Tangentengleichung\obj\Debug\Tangentengleichung.exe
+C:\Users\AdemS\source\repos\Tangentengleichung - DoubleSupport\Tangentengleichung\obj\Debug\Tangentengleichung.pdb
