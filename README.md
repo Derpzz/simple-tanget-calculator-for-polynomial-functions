@@ -28,6 +28,8 @@ Gib die Stelle, durch die die Tangente verlaufen soll, an: 1
 t(x)=16x^1 + -4x^0
 ```
 
+Visualisation of the above mentioned graph and tangent using a graphing calculator:
+
 ![Tangent of the function f(x)](tangent.jpg)
 
 ### But why?
