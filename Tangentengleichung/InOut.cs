@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Linq;
 
 namespace Tangentengleichung
 {
-    class InOut
+    static class InOut
     {
-        public InOut(String ausgabe)
+        /*public InOut(String ausgabe)
         {
             headline(ausgabe);
         }
@@ -12,9 +13,9 @@ namespace Tangentengleichung
         public InOut()
         {
             
-        }
+        }*/
 
-        public void headline(String message)
+        public static void headline(String message)
         {
             var width = Console.WindowWidth;
             var messageLength = message.Length;
@@ -31,24 +32,26 @@ namespace Tangentengleichung
             Console.Write("\n");
         }
 
-        public double[] funktionEingeben()
+        public static double[] funktionEingeben()
         {
-            int grad;
+            int grad = -1;
             double[] funktion;
 
             Console.Write("Grad der Funktion: ");
             var eingabe = Console.ReadLine();
+
+
             try
             {
                 grad = Int32.Parse(eingabe);
-
-                if (grad < 0)
-                    throw new Exception("Die Funktionen können nur einen positiven Grad haben!");
-            } catch (Exception e)
+            } catch(Exception e)
             {
-                Console.WriteLine("ERROR: " + e.Message);
-                return null;
+                throw new FormatException("An invalid character has been entered! Onyl doubles allowed!", e);
             }
+            if (grad < 0)
+                throw new Exception("Die Funktionen können nur einen positiven Grad haben!");
+
+            
             funktion = new double[grad+1];
 
             for (int i = grad; i >= 0; i--)
@@ -64,33 +67,18 @@ namespace Tangentengleichung
                     Console.WriteLine("ERROR: " + e.Message);
                     return null;
                 }
-                //Console.Write("\n");
             }
             Console.Clear();
             return funktion;
         } 
 
-        public void funktionAusgeben(double[] funktion)
+        public static void funktionAusgeben(double[] funktion, string pre)
         {
             if (funktion == null || funktion.Length == 0)
                 return;
 
             var lenthM = funktion.Length - 1;
-            Console.Write(funktion[lenthM] + "x^" + lenthM);
-            for (int i = funktion.Length-2; i >= 0; i--)
-            {
-                Console.Write(" + " + funktion[i] + "x^" + i);
-            }
-            Console.Write("\n");
-        }
-
-        public void funktionAusgeben(double[] funktion, string pre)
-        {
-            if (funktion == null || funktion.Length == 0)
-                return;
-
-            var lenthM = funktion.Length - 1;
-            Console.Write(pre);
+            Console.Write(pre + "(x)=");
             Console.Write(funktion[lenthM] + "x^" + lenthM);
             for (int i = funktion.Length - 2; i >= 0; i--)
             {
@@ -99,7 +87,12 @@ namespace Tangentengleichung
             Console.Write("\n");
         }
 
-        public (double, double) punktEingeben(string bez)
+        public static void funktionAusgeben(Funktion funktion)
+        {
+            funktionAusgeben(funktion.FunktionsGleichung, funktion.Bezeichner);
+        }
+
+        public static (double, double) punktEingeben(string bez)
         {
             double koord1;
             double koord2;
@@ -110,6 +103,14 @@ namespace Tangentengleichung
                 int i = eingabe.IndexOf('(');
                 int i2 = eingabe.IndexOf('|');
                 int i3 = eingabe.IndexOf(')');
+
+                /*
+                 Could also be done. But should it?
+                 int[] i0 = { eingabe.IndexOf('('), eingabe.IndexOf('|'), eingabe.IndexOf(')') };
+
+                if(i0.Any(p => p < 0) || (i2 < i || (i0[2] < i0[1] || i0[2] < i0[0])))
+                    throw new Exception("Eingabefehler! Überprüfe deine Eingabe und versuche es erneut.");*/
+
                 if ((i < 0 || i2 < 0 || i3 < 0) || (i2 < i || (i3 < i2 || i3 < i)))
                     throw new Exception("Eingabefehler! Überprüfe deine Eingabe und versuche es erneut.");
 
@@ -125,7 +126,7 @@ namespace Tangentengleichung
             return (koord1,koord2);
         }
 
-        public string genereicEingeben(string message)
+        public static string genereicEingeben(string message)
         {
             Console.Write(message);
             string eingabe = Console.ReadLine();
@@ -133,7 +134,7 @@ namespace Tangentengleichung
             return eingabe;
         }
 
-        public void error(Exception e)
+        public static void error(Exception e)
         {
             Console.WriteLine("ERROR: " + e.Message);
         }

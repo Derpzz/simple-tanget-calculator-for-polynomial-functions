@@ -8,7 +8,7 @@ namespace Tangentengleichung
         {
             while (true)
             {
-                InOut io = new InOut("Tangentengleichung einer ganzrationalen Funktion");
+                InOut.headline("Tangentengleichung einer ganzrationalen Funktion");
                 Funktion.getTangete();
                 if (stop(false))
                     return;

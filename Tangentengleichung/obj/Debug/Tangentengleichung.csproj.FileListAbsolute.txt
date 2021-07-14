@@ -12,3 +12,10 @@ C:\Users\AdemS\source\repos\Tangentengleichung - DoubleSupport\Tangentengleichun
 C:\Users\AdemS\source\repos\Tangentengleichung - DoubleSupport\Tangentengleichung\obj\Debug\Tangentengleichung.csproj.CoreCompileInputs.cache
 C:\Users\AdemS\source\repos\Tangentengleichung - DoubleSupport\Tangentengleichung\obj\Debug\Tangentengleichung.exe
 C:\Users\AdemS\source\repos\Tangentengleichung - DoubleSupport\Tangentengleichung\obj\Debug\Tangentengleichung.pdb
+C:\Users\AdemS\source\repos\simple-tanget-calculator-for-polynomial-functions\Tangentengleichung\bin\Debug\Tangentengleichung.exe.config
+C:\Users\AdemS\source\repos\simple-tanget-calculator-for-polynomial-functions\Tangentengleichung\bin\Debug\Tangentengleichung.exe
+C:\Users\AdemS\source\repos\simple-tanget-calculator-for-polynomial-functions\Tangentengleichung\bin\Debug\Tangentengleichung.pdb
+C:\Users\AdemS\source\repos\simple-tanget-calculator-for-polynomial-functions\Tangentengleichung\obj\Debug\Tangentengleichung.csprojAssemblyReference.cache
+C:\Users\AdemS\source\repos\simple-tanget-calculator-for-polynomial-functions\Tangentengleichung\obj\Debug\Tangentengleichung.csproj.CoreCompileInputs.cache
+C:\Users\AdemS\source\repos\simple-tanget-calculator-for-polynomial-functions\Tangentengleichung\obj\Debug\Tangentengleichung.exe
+C:\Users\AdemS\source\repos\simple-tanget-calculator-for-polynomial-functions\Tangentengleichung\obj\Debug\Tangentengleichung.pdb

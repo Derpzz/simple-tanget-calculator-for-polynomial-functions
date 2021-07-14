@@ -18,24 +18,21 @@ namespace Tangentengleichung
             get; set;
         }
 
-        InOut IO;
-
         public Funktion()
         {
-            IO = new InOut();
+
         }
 
         public Funktion(double[] funktion)
         {
-            IO = new InOut();
             this.FunktionsGleichung = funktion ?? new double[1];
-            this.Grad = funktion==null ? 0 : funktion.Length-1;
+            this.Grad = funktion == null ? 0 : funktion.Length-1;
             Bezeichner = "f";
         }
 
         public Funktion(double[] funktion, string bezeichner)
         {
-            IO = new InOut();
+
             this.FunktionsGleichung = funktion ?? new double[1];
             this.Grad = funktion == null ? 0 : funktion.Length - 1;
             this.Bezeichner = bezeichner;
@@ -43,17 +40,12 @@ namespace Tangentengleichung
 
         public void ausgeben()
         {
-            IO.funktionAusgeben(FunktionsGleichung, Bezeichner + "(x)=");
-        }
-
-        public void ableitungAusgeben()
-        {
-            IO.funktionAusgeben(ableiten(), Bezeichner + "\'(x)=");
+            InOut.funktionAusgeben(FunktionsGleichung, Bezeichner);
         }
 
         public Funktion ableitenToFunc()
         {
-            return new Funktion(ableiten(), Bezeichner + "\'(x)=");
+            return new Funktion(ableiten(), Bezeichner + "\'");
         }
 
         private double[] ableiten()
@@ -103,26 +95,47 @@ namespace Tangentengleichung
         public Funktion getTangenteAnX()
         {
             double x = 0;
-            String eingabe = IO.genereicEingeben("Gib die Stelle, durch die die Tangente verlaufen soll, an: ");
+            String eingabe = InOut.genereicEingeben("Gib die Stelle, durch die die Tangente verlaufen soll, an: ");
             try
             {
                 x = Double.Parse(eingabe);
             } catch (Exception e)
             {
-                IO.error(e);
-                return new Funktion();
+                throw new FormatException("An invalid character has been entered! Onyl doubles allowed!", e);
             }
             return getTangenteAnX(x);
         }
 
         public static void getTangete()
         {
-            InOut io = new InOut();
-            double[] rawFunktion = io.funktionEingeben();
+            double[] rawFunktion = new double[0];
+            try
+            {
+                rawFunktion = InOut.funktionEingeben();
+            } catch(Exception e)
+            {
+                InOut.error(e);
+                return;
+            }
+            
+
             Funktion funktion = new Funktion(rawFunktion);
-            funktion.ausgeben();
-            funktion.ableitungAusgeben();
-            funktion.getTangenteAnX().ausgeben();
+            Funktion ableitung = funktion.ableitenToFunc();
+            Funktion tangente = new Funktion();
+            try
+            {
+                tangente = funktion.getTangenteAnX();
+            } catch(Exception e)
+            {
+                InOut.error(e);
+                return;
+            }
+             
+            
+            
+            InOut.funktionAusgeben(funktion);
+            InOut.funktionAusgeben(ableitung);
+            InOut.funktionAusgeben(tangente);
         }
     }
 }
